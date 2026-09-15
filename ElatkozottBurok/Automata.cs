@@ -64,5 +64,14 @@ namespace ElatkozottBurok
                 return termek;
             }
         }
+
+        public void JavitasRugassal()
+        {
+            if (new Random().Next(0, 2) == 0)
+            {
+                Elakadva = false;
+            }
+            else { Console.WriteLine("Megszólalt a riasztó"); }
+        }
     }
 }
