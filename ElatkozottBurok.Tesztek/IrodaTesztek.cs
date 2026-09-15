@@ -49,7 +49,7 @@ public void Fejleszto_KedvencSnack_KetszeresStresszoldasEsExtraKoffein()
     Assert.That(dev.Koffeinszint, Is.EqualTo(45));
     Assert.That(dev.StresszSzint, Is.EqualTo(30));
 }
-        /*
+  
 [Test]
 public void Automata_ElakadvaAllapotban_MegnoveliAVasarloStresszet()
 {
@@ -67,13 +67,13 @@ public void Automata_KevesPenz_NemAdKiTermeket()
 {
     var automata = new Automata();
     automata.Feltolt(new List<Nassolnivalo> { new Nassolnivalo("Kávé", 20, 10, 300) });
-    var dev = new Fejleszto("Szegény Béla", Munkakor.Junior, 100, "Kávé");
+    var dev = new Fejleszto("Szegény Béla", Munkakor.Junior,100, "Kávé", 100,0);
 
     var kapott = automata.Vasarlas("Kávé", dev);
 
     Assert.That(kapott, Is.Null);
     Assert.That(dev.Penz, Is.EqualTo(100));
-}*/
+}
     }
 }
 
