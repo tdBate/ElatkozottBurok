@@ -62,5 +62,10 @@ namespace ElatkozottBurok
                 }
             }
         }
+
+        public void NapiJelentes()
+        {
+            Fejlesztok.Sort((a,b)=> (a.StresszSzint> b.StresszSzint));
+        }
     }
 }
