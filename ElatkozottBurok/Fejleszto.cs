@@ -85,5 +85,11 @@ namespace ElatkozottBurok
             }
 
         }
+
+        public string toString()
+        {
+            return $"Név: {nev}, Pénz: {penz}, KoffeinSzint: {koffeinSzint}, StresszSzint: {stresszSzint}, Kiégve: {kiegve}, KedvencSnack: {kedvencSnack}";
+        }
+
     }
 }
