@@ -35,7 +35,7 @@ namespace ElatkozottBurok.Tesztek
             Assert.That(dev2.StresszSzint, Is.EqualTo(100));
             Assert.That(dev2.Kiegve, Is.True);
         }
-        /*
+        
 [Test]
 public void Fejleszto_KedvencSnack_KetszeresStresszoldasEsExtraKoffein()
 {
@@ -49,7 +49,7 @@ public void Fejleszto_KedvencSnack_KetszeresStresszoldasEsExtraKoffein()
     Assert.That(dev.Koffeinszint, Is.EqualTo(45));
     Assert.That(dev.StresszSzint, Is.EqualTo(30));
 }
-
+        /*
 [Test]
 public void Automata_ElakadvaAllapotban_MegnoveliAVasarloStresszet()
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace ElatkozottBurok
 {
@@ -12,7 +13,7 @@ namespace ElatkozottBurok
         private bool kiegve;
         private string kedvencSnack;
 
-        public Fejleszto(string nev, Munkakor munkakor, int penz, string kedvencSnack, int stresszSzint, int koffeinSzint)
+        public Fejleszto(string nev, Munkakor munkakor, int penz, string kedvencSnack, int koffeinSzint, int stresszSzint)
         {
             this.nev = nev;
             this.munkakor = munkakor;
@@ -48,5 +49,41 @@ namespace ElatkozottBurok
             } }
         public bool Kiegve { get => kiegve; set => kiegve = value; }
         public string KedvencSnack { get => kedvencSnack; set => kedvencSnack = value; }
+
+        public void Dolgozik() 
+        {
+            if (Kiegve) { Console.WriteLine("A fejlesztő ki van égve"); }
+            else if (Munkakor == Munkakor.Junior)  
+            {
+                Koffeinszint -= 25;
+                StresszSzint += 20;
+            }
+            else if (Munkakor == Munkakor.Senior)
+            {
+                Koffeinszint -= 15;
+                StresszSzint += 10;
+            }
+            else if (Munkakor == Munkakor.DevOpsVarazslo)
+            {
+                Koffeinszint -= 10;
+                StresszSzint += 25;
+            }
+
+            if (Koffeinszint < 15) { Console.WriteLine($"${Nev} agya lefagyott(BlueScreen), koffeinre van szüksége!"); }
+        }
+
+        public void Fogyaszt(Nassolnivalo elem)
+        {
+            if (KedvencSnack == elem.Nev)
+            {
+                Koffeinszint += elem.KoffeinLoket+5;
+                StresszSzint -= (elem.StresszOldas*2);
+            } else
+            {
+                Koffeinszint += elem.KoffeinLoket;
+                StresszSzint -= elem.StresszOldas;
+            }
+
+        }
     }
 }
